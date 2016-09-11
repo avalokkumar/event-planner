@@ -1,3 +1,3 @@
-eventPlanner.controller('homeCtrl',['$scope', function($scope){
+angular.module('eventPlanner',[]).controller('homeCtrl',['$scope', function($scope){
 
 }]);
