@@ -1,0 +1,1 @@
+var eventPlanner = angular.module('eventPlanner',[]);
