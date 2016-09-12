@@ -1,3 +1,8 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
 a {
   color: #00B7FF;
 }
@@ -7,37 +12,10 @@ body{
   font-size: 14px;
   line-height: 1.42857143;
   color: #888888;
-  background-color: #272B30 !important;
-  padding: 50px;
-}
-
-body.container{
-	width: inherit !important;
+  background-color: #060606;
 }
 .loginBtn{
   padding-top: 0.2em;
   height: 1em;
   width: 1.4em;
-}
-
-.mainContainer{
-	width: 100%;
-	background-color: #496067;
-}
-
-.headerImg{
-	padding: 0.5em 1em 1em 1em;
-    max-height: 100%;
-    max-width: 100%;
-}
-
-.pull-right {
-  float: right !important;
-}
-.right-menu{
-	padding: 1.2em 1.2em 1.2em 1.2em; 
-}
-a.list-group-item, button.list-group-item{
-	padding: 1em 0em 1em 0em;
-    text-align: center;
 }

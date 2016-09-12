@@ -15,13 +15,13 @@
         <td><input class="form-control" ng-model="contact.name" placeholder="Name..."></td>
         <td><input class="form-control" ng-model="contact.email" placeholder="Email..."></td>
         <td><input class="form-control" ng-model="contact.number" placeholder="Number..."></td>
-        <td><button class="btn btn-primary" ng-click="createEvent()">Add</button></td>
-        <td><button class="btn btn-primary" ng-click="updateEvent(contact._id)" >Update</button>
-            <button class="btn btn-primary" ng-click="resetEvent()">Reset</button>
+        <td><button class="btn btn-primary" ng-click="addContact()">Add</button></td>
+        <td><button class="btn btn-primary" ng-click="updateContact(contact._id)" >Update</button>
+            <button class="btn btn-primary" ng-click="resetContact()">Reset</button>
         </td>
     </tr>
-    <tr ng-repeat="event in eventList">
-        <td><span class="glyphicon glyphicon-book" ng-show="event.name"></span></td>
+    <tr ng-repeat="contact in contactList">
+        <td><span class="glyphicon glyphicon-book" ng-show="contact.name"></span></td>
         <td>{{contact.name}}</td>
         <td>{{contact.email}}</td>
         <td>{{contact.number}}</td>
