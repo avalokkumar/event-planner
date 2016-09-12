@@ -7,7 +7,7 @@ body{
   line-height: 1.42857143;
   padding: 50px;
   color: #888888;
-  background-color: #272B30 !important;
+  background-color: #333333 !important;
   padding: 50px;
 }
 
@@ -23,7 +23,7 @@ body.container{
 
 .mainContainer{
 	width: 100%;
-	background-color: #496067;
+	background-color: #272B30;
 }
 
 .headerImg{
@@ -32,9 +32,6 @@ body.container{
     max-width: 100%;
 }
 
-.pull-right {
-  float: right !important;
-}
 .right-menu{
 	padding: 2em 1.2em 1.2em 1.2em; 
 }
