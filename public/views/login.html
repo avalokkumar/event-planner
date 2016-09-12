@@ -1,0 +1,42 @@
+<div class="authenticate">
+    <div class="row" id="authcontainter">
+        <div class="login">
+            <div class="signin">
+                <span class="hidden-xs">SIGN IN</span>
+                <span class="mobilelogo visible-xs"></span>
+            </div>
+            <div class="hidden-xs successMessage" ng-show="sucessMessage" ng-bind="successRegister"></div>
+            <form name="loginform" class="login-form" ng-submit="login()" novalidate>
+                <div class="inner-addon inputselect uname" >
+                    <input type="text" class="form-control" placeholder="Username" name="username" ng-model="username"  ng-focus="focusUpdate()" ng-change="usererrorout()" required/>
+                    <span class="loginuser"></span>
+                </div>
+                <div class="errormsg" ng-if="(isUserBlank) || (loginform.username.$dirty && loginform.username.$error.required)" >
+                    <span>A username is required.</span>
+                </div>
+                <div class="inner-addon inputselect ">
+                    <input type="password" class="form-control" placeholder="Password" name="password" ng-model="password" ng-focus="focusUpdate()" ng-change="passerrorout()"  required/>
+                    <span class="loginpass"></span>
+                </div>
+                <div class="errormsg" ng-if="(isPassBlank) || (loginform.password.$dirty && loginform.password.$error.required)">
+                    <span>A password is required.</span>
+                </div>
+                <div class="authfail" ng-if="autherror">
+                    <span>The username or password you entered is invalid, please try again.</span>
+                </div>
+                <div class="forgotlink">
+                    <a href="#/forgot"><span>Forgot Username or Password?</span></a>
+                </div>
+                <div class="loginbtn" ng-class="showLoginButton ? 'visible' : 'not-visible'" >
+                    <button type="submit" class="btn login_button" id="signin" ng-disabled="isDisabled">SIGN IN</button>
+                </div>
+            </form>
+            <div class="donthave">
+                <span>Don’t have an account?</span>
+            </div>
+            <div class="registerlink">
+                <a href="#/register"><span>Register Now</span></a>
+            </div>
+        </div>
+    </div>
+</div>
