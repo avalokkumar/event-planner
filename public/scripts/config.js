@@ -7,4 +7,8 @@ angular.module('eventPlanner')
     			url:'/home',
     			templateUrl: '../views/home.html'
     		})
+			.state('login', {
+				url:'/login',
+				templateUrl: '../views/login.html'
+			})
     }]);
