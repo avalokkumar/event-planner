@@ -1,4 +1,4 @@
-/**
- * Created by metafix on 9/11/2016.
- */
- 
+angular.module('eventPlanner')
+    .config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider, $stateProvider) {
+    	$urlRouterProvider.otherwise('/');
+    }]);
