@@ -20,8 +20,8 @@ module.exports = function(){
     app.use(express.errorHandler());
   }
 
-  app.get('/', routes.index);
-  app.get("/app", function(err, res) {
+//  app.get('/', routes.index);
+  app.get("/", function(err, res) {
     if(err){
       console.log(err.message);
     }

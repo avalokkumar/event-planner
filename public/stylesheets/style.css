@@ -3,7 +3,6 @@ a {
   color: #00B7FF;
 }
 body{
-  font-size: 14px;
   line-height: 1.42857143;
   padding: 50px;
   color: #888888;
@@ -38,4 +37,12 @@ body.container{
 a.list-group-item, button.list-group-item{
 	padding: 1em 0em 1em 0em;
     text-align: center;
+}
+
+
+.footer{
+	width: inherit !important;
+	/* background-color: #2E2833; */
+	font-size: 14px;
+	color: #F39C12;
 }
