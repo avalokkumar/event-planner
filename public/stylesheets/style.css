@@ -15,11 +15,14 @@ body.container{
   background-color: #060606;
 }
 .loginBtn{
-  /*padding-top: 0.2em;
-  height: 1em;
+  padding-top: 0em;
+  /*height: 1em;
   */width: 8em !important;
 }
-
+.login{
+    margin: 0em auto;
+    padding: 0em;
+}
 .mainContainer{
 	width: 100%;
 	background-color: #272B30;
@@ -47,13 +50,16 @@ a.list-group-item, button.list-group-item{
 	color: #F39C12;
 }
 .authenticate{
-    width: 18em !important;
-    height: 12em;
+    border-radius: 25px;
     padding: 0em 1em 0em 1em;
     align-content: center;
     border: 1px solid #798d8f;
 }
 #authcontainter{
+    margin-top: 6em;
+    width: 32em !important;
+    height: 22em;
+    border-radius: 25px;
     padding: 0em 1em 0em 1em;
     background-color: #0d1318 !important;
 }
@@ -73,8 +79,9 @@ h3 { color: #4a89dc; }
 
 form {
     width: 380px;
-    margin: 4em auto;
-    padding: 3em 2em 2em 2em;
+    margin: 1em auto;
+    border-radius: 1em;
+    padding: 1em 1em 1em 1em;
     background: #fafafa;
     border: 1px solid #ebebeb;
     box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
@@ -82,7 +89,7 @@ form {
 
 .group {
     position: relative;
-    margin-bottom: 45px;
+    margin-bottom: 20px;
 }
 
 input {
@@ -260,8 +267,30 @@ input:focus ~ .highlight {
         opacity: 0;
     }
 }
+.form-group input{
+    border-bottom: none !important;
+}
+.searchBtn{
 
-footer { text-align: center; }
+}
+
+#footer {
+    text-align: center;
+    font-size: 1em;
+    height: 8em;
+    width: inherit;
+    border-radius: 8px;
+    margin: 2em 1em 0em 1em;
+    background-color: #0d1318;
+}
+#footer span{
+    font-size: 2em;
+}
+#footer p{
+    color: #d62c1a;
+    font-size: 1.6em;
+    letter-spacing: .4px;
+}
 
 footer p {
     color: #888;
