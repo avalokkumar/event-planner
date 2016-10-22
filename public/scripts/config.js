@@ -1,7 +1,7 @@
 angular.module('eventPlanner')
     .config(['$urlRouterProvider','$stateProvider',function($urlRouterProvider, $stateProvider) {
     	
-    	$urlRouterProvider.otherwise('/');
+    	$urlRouterProvider.otherwise('login');
     	$stateProvider
     		.state('home', {
     			url:'/home',

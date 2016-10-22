@@ -56,7 +56,6 @@ a.list-group-item, button.list-group-item{
     border: 1px solid #798d8f;
 }
 #authcontainter{
-    margin-top: 6em;
     width: 32em !important;
     height: 22em;
     border-radius: 25px;
@@ -317,3 +316,16 @@ footer img {
 footer img:hover { opacity: .83; }
 
 footer img:focus , footer a:focus { outline: none; }
+
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+
+    display: flex;
+    align-items: center;
+}
+
+.loginForm{
+    background-color: #0d1318;
+    padding: 2em 2em 2em 2em;
+}

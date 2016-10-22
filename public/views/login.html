@@ -1,28 +1,30 @@
-<div class="container">
-    <div class="col-lg-3"></div>
-    <div class="col-lg-6" id="authcontainter">
-        <div class="login">
-            <div>
-                <h4 class="hidden-xs text-center">SIGN IN</h4>
-            </div>
-            <form>
+<div class="vertical-center" ng-controller="loginCtrl">
+    <div class="container-fluid">
+        <div class="row text-center">
+            <form action="home.html" class="login loginForm">
+                <div>
+                    <h4 class="hidden-xs text-center">SIGN IN</h4>
+                </div>
                 <div class="group">
                     <input type="text"><span class="highlight"></span><span class="bar"></span>
-                    <label>Username</label>
+                    <label>Username/Email</label>
                 </div>
-                <div class="group">
-                    <input type="email"><span class="highlight"></span><span class="bar"></span>
+                <div class="form-group">
+                    <input type="email"><span class="form-control"></span><span class="bar"></span>
                     <label>Password</label>
                 </div>
-                <button type="button" class="button buttonBlue loginBtn">Login
-                    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-                </button>
+                <div class="row">
+                    <button type="button" class="button buttonBlue loginBtn">Login
+                        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+                    </button>
+                </div>
+                <div class="row">
+                    <span style="color: #1c699d">Don’t have an account?</span>
+                    <br>
+                    <a href="#"><span>Register Now</span></a><br>
+                    <a href="#"><span style="font-size: 0.7em">Forgot Password?</span></a>
+                </div>
             </form>
-            <div class="col-md-offset-3 registerlink">
-                <span>Don’t have an account?</span>
-                <a href="#"><span>Register Now</span></a>
-            </div>
         </div>
     </div>
-    <div class="col-lg-3"></div>
 </div>
