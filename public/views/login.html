@@ -1,25 +1,28 @@
-<div class="vertical-center" ng-controller="loginCtrl">
+<div class="vertical-center">
     <div class="container-fluid">
         <div class="row text-center">
-            <form action="home.html" class="login loginForm">
+            <form name="loginForm" action="home.html" class="login loginForm">
                 <div>
-                    <h4 class="hidden-xs text-center">SIGN IN</h4>
+                    <h4 style="color:gray; font-size: 1.6em;" class="hidden-xs text-center"><strong>SIGN IN</strong></h4>
+                </div>
+                <hr>
+		        <i class="material-icons">account_box</i>
+                <div class="group">
+                	<!-- <md-icon md-svg-src="/images/person.png" class="name"></md-icon> -->
+                    <input ng-bind="username" type="text"><span class="highlight"></span><span class="bar"></span>
+                    <label>Username</label>
                 </div>
                 <div class="group">
-                    <input type="text"><span class="highlight"></span><span class="bar"></span>
-                    <label>Username/Email</label>
-                </div>
-                <div class="form-group">
-                    <input type="email"><span class="form-control"></span><span class="bar"></span>
+                    <input ng-bind="pwd" type="password"><span class="highlight"></span><span class="bar"></span>
                     <label>Password</label>
                 </div>
                 <div class="row">
-                    <button type="button" class="button buttonBlue loginBtn">Login
+                    <button type="button" ng-click="ack()" class="button buttonBlue loginBtn">Login
                         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
                     </button>
                 </div>
                 <div class="row">
-                    <span style="color: #1c699d">Don’t have an account?</span>
+                    <span style="color: #1c699d">Don't have an account?</span>
                     <br>
                     <a href="#"><span>Register Now</span></a><br>
                     <a href="#"><span style="font-size: 0.7em">Forgot Password?</span></a>

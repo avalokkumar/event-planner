@@ -1,0 +1,26 @@
+{
+  "name": "EventPlanner",
+  "description": "To Plan any Events",
+  "main": "",
+  "authors": [
+    "avalokkumar <avalokkumar@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/avalokkumar/event-planner",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-bootstrap": "^2.2.0",
+    "angular-route": "^1.5.8",
+    "angular-ui-router": "^0.3.1",
+    "bootstrap": "^3.3.7",
+    "angular-material": "^1.1.1"
+  }
+}

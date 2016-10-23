@@ -9,7 +9,8 @@ module.exports = function(){
       app.use(express.logger('dev')),
       app.use(express.methodOverride()),
       app.use(router()),
-      app.use(express.static(path.join(__dirname, 'public'))),
+      app.use('/public', express.static(path.join(__dirname, 'public'))),
+      app.use('/bower_components',  express.static(__dirname + '/bower_components'));
       app.use(bodyParser.json()),
       app.use(bodyParser.urlencoded({
         extended: !0

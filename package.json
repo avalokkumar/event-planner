@@ -14,5 +14,8 @@
     "mongojs": "^2.4.0",
     "path": "^0.12.7",
     "router": "^1.1.4"
+  },
+  "devDependencies": {
+    "material-design-icons": "^3.0.1"
   }
 }
