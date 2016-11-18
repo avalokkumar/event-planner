@@ -2,6 +2,7 @@ module.exports = function(){
 
   var express = require('express')
       , routes = require('./routes/index.js')()
+      , user = require('./routes/user.js')()
       , router = require('router')
       , path = require('path')
       , bodyParser = require('body-parser')
@@ -21,8 +22,18 @@ module.exports = function(){
         extended: !0
       }));
       
-  app.get('*', function(req, res){
+  /*app.get('/', function(req, res){
 	  res.sendFile('./public/index.html')
+  })*/
+  app.get('/register', function(req,res){
+	  user.createUser(req, res);
+  })
+  app.post('/login', function(req,res){
+	  user.validateCredentials(req, res);
+  })
+  //returns dummy data from data directory
+  app.get('/dummydata', function(req, res){
+	  user.sendDummyData(req, res);
   })
  //app.get('/', routes.index);
   /*app.get('/contactlist', routes.getContactList);*/

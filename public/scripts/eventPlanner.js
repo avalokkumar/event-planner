@@ -3,7 +3,7 @@ var eventPlanner = angular.module('eventPlanner',['ui.router'])
 	console.log('App has started running!')
 });
 
-eventPlanner.controller('mainController', ['$scope', function($scope){
+eventPlanner.controller('mainController', ['$scope', function($scope, $location){
 	$scope.title = "Plan Your Event";
 	$scope.ack = function(){
 		//alert(loginService.validateCredentials())
@@ -11,14 +11,17 @@ eventPlanner.controller('mainController', ['$scope', function($scope){
 	}
 }]);
 
-eventPlanner.controller('loginCtrl',['$scope','loginService', function loginCtrl($scope, loginService){
+function loginSuccessCallback(response){
+	
+}
+function errorCallback(response){
+	
+}
+angular.module('eventPlanner').controller('loginCtrl',['$scope','$location','loginService', function loginCtrl($scope, loginService){
 	console.log('Initializing loginCtrl')
 	$scope.hello = "Hello";
-	$scope.username = "Alex";
-	$scope.pwd = "@lex";
 	$scope.ack = function(){
-		//alert(loginService.validateCredentials())
-		loginService.validateCredentials();
+		loginService.validateCredentials($scope.username, $scope.pwd).then(loginSuccessCallback, errorCallback);
 		alert('Login Success!')
   	}
   }]);

@@ -1,0 +1,24 @@
+register
+{
+  "userid": "",
+  "name": "",
+  "email": "",
+  "username": "",
+  "dateOfBirth": "",
+  "contactNumber": "",
+  "address": "",
+  "city": "",
+  "state": "",
+  "country": "",
+  "zipCode": ""
+}
+
+Login
+{
+  "userId": "",
+  "username": "",
+  "password": "",
+  "failedLogin": 0,
+  "loginStatus": "",
+  "loginStatusCode":""
+}
