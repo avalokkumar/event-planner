@@ -1,5 +1,5 @@
-eventPlanner.service('restAPIService',['$http', 
-function($http){    
+eventPlanner.service('restAPIService',['$http','constant',
+function($http, constant){    
 	var restServices = {};
 	
 	restServices.getDetails = function(){
@@ -8,10 +8,9 @@ function($http){
 			url: 'http://localhost:3000/dummydata',
 			headers: { 'Content-Type': 'application/json'}
 		 });
-    }
+    } 
 	
     restServices.validateUser = function(userName, password){
-    	alert('validateCredentials called in service')
 		var userCredentials = {
 				username: userName,
 				pwd: password
@@ -22,5 +21,14 @@ function($http){
 			headers: {'Content-Type': 'application/json'}
 		});
     }
+    
+    restServices.getCountryById = function(countryCode){
+    	return $http({
+    		method: 'GET',
+    		url: constant.ext_service_groupkt_base_url+countryCode+'/all',
+    		headers: {'Content-Type': 'application/json'}
+    	});
+    }
+    
     return restServices;
 }])

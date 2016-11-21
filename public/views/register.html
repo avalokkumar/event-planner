@@ -22,25 +22,38 @@
                     <input ng-model="username" type="text"><span class="highlight"></span><span class="bar"></span>
                     <label>Username</label>
                 </div>
-			    <div layout-gt-xs="row">
-			      <div flex-gt-xs>
+			    <div class="group">
 			        <h4>Date Of Birth</h4>
 			        <md-datepicker ng-model="dateOfBirth" md-placeholder="Enter date"></md-datepicker>
-			      </div>
+			    </div>
                 <div class="group">
                 	<!-- <md-icon md-svg-src="/images/person.png" class="name"></md-icon> -->
                     <input ng-model="phoneNum" type="text" angular-mask="9999999999"><span class="highlight"></span><span class="bar"></span>
                     <label>Phone Number</label>
                 </div>
                 <div class="group">
-	                <md-input-container class="md-block">
+	                <!-- <md-input-container class="md-block">
 			          <label>Address</label>
-			          <textarea ng-model="biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
-			        </md-input-container>
+			          <textarea ng-model="address" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+			        </md-input-container> -->
+			        <md-input-container>
+					  <label>Address</label>
+					  <textarea ng-model="address" rows="5" cols="40"></textarea>
+					</md-input-container>
 			    </div>
-			  
-			    
-                <md-card-content>
+			  	<div class="group">
+				  	<select ng-model='country' class='form-control'>
+			            <option value="default" ng-selected="selected">Select a Country</option>
+			            <option ng-repeat="country in countries" ng-value="country">{{country}}</option>
+			        </select>
+		        </div>
+		        <div class="group">
+			        <select ng-model='state' class='form-control'>
+			            <option value="default" ng-selected="selected">Select a State</option>
+			            <option ng-repeat="state in states" ng-value="state">{{state}}</option>
+			        </select>
+			    </div>
+                <!-- <md-card-content>
                     <div layout="row">
                         <md-input-container class="container">
                             <label>Country</label>
@@ -49,17 +62,17 @@
                                     {{country}}
                                 </md-option>
                             </md-select>
-                        <!-- <select class="selectpicker">
+                        <select class="selectpicker">
 						  <option>Mustard</option>
-						</select> -->
+						</select>
                         </md-input-container>
                     </div>
-                </md-card-content>
+                </md-card-content> -->
                 <div class="row">
                     <button type="button" ng-click="ack()" class="button buttonBlue loginBtn">Register
                         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
                     </button>
-                    <button type="button" ng-click="ack()" class="button buttonBlue loginBtn">Reset
+                    <button type="button" ng-click="" class="button buttonBlue loginBtn">Reset
                         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
                     </button>
                 </div>
