@@ -4,17 +4,16 @@
             <form name="loginForm" action="home.html" class="login loginForm">
                 <div>
                     <h4 style="color:gray; font-size: 1.6em;" class="hidden-xs text-center"><strong>SIGN IN</strong></h4>
-                    <p style="color: red;">{{hello}} {{username}}</p>
                 </div>
                 <hr>
 		        <!-- <i class="material-icons">account_box</i> -->
                 <div class="group">
                 	<!-- <md-icon md-svg-src="/images/person.png" class="name"></md-icon> -->
-                    <input ng-bind="username" type="text"><span class="highlight"></span><span class="bar"></span>
+                    <input ng-model="username" type="text"><span class="highlight"></span><span class="bar"></span>
                     <label>Username</label>
                 </div>
                 <div class="group">
-                    <input ng-bind="pwd" type="password"><span class="highlight"></span><span class="bar"></span>
+                    <input ng-model="pwd" type="password"><span class="highlight"></span><span class="bar"></span>
                     <label>Password</label>
                 </div>
                 <div class="row">
@@ -25,7 +24,7 @@
                 <div class="row">
                     <span style="color: #1c699d">Don't have an account?</span>
                     <br>
-                    <a href="#"><span>Register Now</span></a><br>
+                    <a href="/#/register"><span>Register Now</span></a><br>
                     <a href="#"><span style="font-size: 0.7em">Forgot Password?</span></a>
                 </div>
             </form>

@@ -1,30 +1,16 @@
-eventPlanner.service('loginService',['$http', function($http){
+eventPlanner.service('loginService',['restAPIService', 
+function(restAPIService){
 	
 	var loginServices = {};
 	
 	loginServices.getDetails = function(){
-		return $http({
-			method: 'GET',
-			url: 'http://localhost:3000/dummydata',
-			headers: { 'Content-Type': 'application/json'}
-		 });
-	}
+		return restAPIService.getDetails();
+	};
 	
 	loginServices.validateCredentials = function(userName, password){
-		var userCredentials = {
-				username: userName,
-				pwd: password
-		}
-		
-		return $http.post('/login', userCredentials)
-		   		.success(function(response){
-		   			console.log(response);
-		   			if(response.isSuccess){
-		   				console.log('User details Successfully Validated');
-		   				
-		   			}
-		   		});
-	}
+		console.log('validateCredentials called');
+		return restAPIService.validateUser(userName, password);
+	};
 	
 	return loginServices;
 }])

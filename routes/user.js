@@ -3,7 +3,7 @@ module.exports = function() {
   fs = require('fs');
   var db = mongojs("contactlist", [ "contactlist" ]);
   var functions = {};
- 
+  var loginFailedCount = 0;
   var isUserRegistered = function(username) {
       console.log("Received a GET request!");
       var username = req.params.username;
@@ -33,9 +33,34 @@ module.exports = function() {
   }
   
   functions.validateCredentials = function(req, res){
-	 if(isUserRegistered(req.param.username)){
+	  console.log('Inside validateCredentials in user.js');
+	  var cred = JSON.parse(req.body);
+	  console.log("cred: ")
+	  console.log(cred)
+	  var username = cred.username;
+	  var pwd = cred.pwd;
+	  console.log("username: "+username+ " | Password"+pwd)
+	  if(username === "clay" && pwd  === "abc" ){
+		  var loginResponse = {
+				  userId: "123",
+				  username: username,
+				  password: pwd,
+				  failedLogin: loginFailedCount,
+				  loginStatus: 2,
+				  loginStatusCode:"Success"
+		  }
+		  res.json(loginResponse);  
+	  }else{
+		  var errResponse = {
+				  errorMessage: "Login Failed",
+				  errorCode: 5
+		  } 
+		  loginFailedCount++;
+		  res.json(errResponse);
+	  }
+	  /*if(isUserRegistered(req.param.username)){
 		 //TODO: return success flag in response
-	 }
+	 }*/
 	  
   }
   

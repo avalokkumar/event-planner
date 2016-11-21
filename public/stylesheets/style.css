@@ -329,3 +329,9 @@ footer img:focus , footer a:focus { outline: none; }
     background-color: #0d1318;
     padding: 2em 2em 2em 2em;
 }
+.registerForm{
+	background-color: #0d1318;
+    padding: 2em 2em 2em 2em;
+    margin-bottom: 6em;
+    width: 40%;
+}
