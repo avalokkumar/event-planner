@@ -1,17 +1,13 @@
-eventPlanner.service('register',['$http', function($http){
+eventPlanner.service('registerService',['$http', 'restAPIService', function($http, restAPIService){
+	var registerServices = {};
 	
-	var registerUser = function(userDetails){
-
-		$http.post('/register', userDetails)
-		   		.success(function(response){
-		   			console.log(response);
-		   			if(response.isSuccess){
-		   				console.log('User details Successfully registered');
-		   			}
-		   		});
+	registerServices.registerUser = function(userDetails){
+		return restAPIService.registerUser(userDetails);
 	}
 	
-	return {
-		validateCredentials: this.validateCredentials
-	};
+	registerServices.getStatesByCountryCode = function(countryCode){
+		return restAPIService.getStatesByCountryCode(countryCode);
+	}
+	
+	return registerServices;
 }])

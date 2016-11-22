@@ -11,7 +11,7 @@ eventPlanner.controller('mainController', ['$scope', function($scope, $location)
 	}
 }]);
 
-angular.module('eventPlanner').controller('loginCtrl',['$scope','$location','loginService', 
+eventPlanner.controller('loginCtrl',['$scope','$location','loginService',
 function loginCtrl($scope,$location, loginService){
 	console.log('Initializing loginCtrl')
 	$scope.hello = "Hello";
@@ -39,12 +39,29 @@ function loginCtrl($scope,$location, loginService){
 	}
 }]);
 
-angular.module('eventPlanner').controller('registerCtrl',['$scope','$location','loginService', 
-function loginCtrl($scope,$location, loginService){
+eventPlanner.controller('registerCtrl',['$scope','$location', 'registerService', 
+function registerCtrl($scope, $location, registerService){
 	$scope.registerTitle = "User Registration";
-	$scope.countries = ['INDIA', 'CHINA', 'BRAZIL', 'RUSSIA', 'USA'];
-	$scope.states = ['JHARKHAND', 'BIHAR', 'KARNATAKA', 'UTTAR PRADESH', 'ORISSA'];
-}])
+	$scope.countries = [{'code': 'IND', 'value': 'INDIA'},
+						  {'code':'USA', 'value': 'UNITED STATES OF AMERICA'}];
+	
+	$scope.states = [];
+	$scope.loadStateDetails = function(){
+		$scope.states = [];
+		registerService.getStatesByCountryCode($scope.country).then(successCallback, errorCallback);	
+	}
+	function successCallback(response){
+		/*for(var state in response.data.RestResponse.result){
+			$scope.states.push(state.name);
+		}*/
+		for (var i = 0; i < response.data.RestResponse.result.length; i++) {
+			$scope.states.push(response.data.RestResponse.result[i].name)
+		}
+	}
+	function errorCallback(response){
+		console.log(response.errorMessage);
+	}
+}]);
 
 
 

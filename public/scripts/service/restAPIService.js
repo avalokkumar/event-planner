@@ -1,7 +1,7 @@
-eventPlanner.service('restAPIService',['$http','constant',
-function($http, constant){    
+eventPlanner.service('restAPIService',['$http',
+function($http){    
 	var restServices = {};
-	
+	var ext_service_groupkt_base_url = 'http://services.groupkt.com/state/get/'
 	restServices.getDetails = function(){
 		return $http({
 			method: 'GET',
@@ -18,14 +18,30 @@ function($http, constant){
 		return $http({
 			method: "POST",
 			url: 'http://localhost:3000/login',
+			data: userCredentials,
 			headers: {'Content-Type': 'application/json'}
 		});
     }
     
-    restServices.getCountryById = function(countryCode){
+    restServices.registerUser = function(userData){
+    	return $http({
+    		method: "POST",
+    		url: "http://localhost:3000/register",
+    		headers: {'Content-Type': 'application/json'}
+    	});
+    	
+    	$http.post('/register', userDetails)
+		   		.success(function(response){
+		   			console.log(response);
+		   			if(response.isSuccess){
+		   				console.log('User details Successfully registered');
+		   			}
+		   		});
+    }
+    restServices.getStatesByCountryCode = function(countryCode){
     	return $http({
     		method: 'GET',
-    		url: constant.ext_service_groupkt_base_url+countryCode+'/all',
+    		url: ext_service_groupkt_base_url+countryCode+'/all',
     		headers: {'Content-Type': 'application/json'}
     	});
     }

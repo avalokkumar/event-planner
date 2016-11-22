@@ -42,14 +42,14 @@
 					</md-input-container>
 			    </div>
 			  	<div class="group">
-				  	<select ng-model='country' class='form-control'>
+				  	<select ng-model='country' class='form-control' ng-change="loadStateDetails()">
 			            <option value="default" ng-selected="selected">Select a Country</option>
-			            <option ng-repeat="country in countries" ng-value="country">{{country}}</option>
+			            <option ng-repeat="country in countries" ng-value="country.code">{{country.value}}</option>
 			        </select>
 		        </div>
 		        <div class="group">
 			        <select ng-model='state' class='form-control'>
-			            <option value="default" ng-selected="selected">Select a State</option>
+			            <!-- <option value="default" ng-selected="selected">Select a State</option> -->
 			            <option ng-repeat="state in states" ng-value="state">{{state}}</option>
 			        </select>
 			    </div>
