@@ -1,6 +1,6 @@
 <div class="vertical-center">
     <div class="container-fluid demo-md-panel md-padding">
-        <div class="row text-center">
+        <div class="panel panel-default text-center">
             <form name="registerForm" action="login.html" class="login registerForm">
                 <div>
                     <h4 style="color:gray; font-size: 1.6em;" class="hidden-xs text-center"><strong>{{registerTitle}}</strong></h4>
@@ -9,26 +9,26 @@
 		        <!-- <i class="material-icons">account_box</i> -->
 		        <div class="group">
                 	<!-- <md-icon md-svg-src="/images/person.png" class="name"></md-icon> -->
-                    <input ng-model="name" type="text"><span class="highlight"></span><span class="bar"></span>
+                    <input ng-model="userDetails.name" type="text"><span class="highlight"></span><span class="bar"></span>
                     <label>Name</label>
                 </div>
                 <div class="group">
                 	<!-- <md-icon md-svg-src="/images/person.png" class="name"></md-icon> -->
-                    <input ng-model="email" type="email"><span class="highlight"></span><span class="bar"></span>
+                    <input ng-model="userDetails.email" type="email"><span class="highlight"></span><span class="bar"></span>
                     <label>Email</label>
                 </div>
                 <div class="group">
                 	<!-- <md-icon md-svg-src="/images/person.png" class="name"></md-icon> -->
-                    <input ng-model="username" type="text"><span class="highlight"></span><span class="bar"></span>
+                    <input ng-model="userDetails.username" type="text"><span class="highlight"></span><span class="bar"></span>
                     <label>Username</label>
                 </div>
 			    <div class="group">
 			        <h4>Date Of Birth</h4>
-			        <md-datepicker ng-model="dateOfBirth" md-placeholder="Enter date"></md-datepicker>
+			        <md-datepicker ng-model="userDetails.dateOfBirth" md-placeholder="Enter date"></md-datepicker>
 			    </div>
                 <div class="group">
                 	<!-- <md-icon md-svg-src="/images/person.png" class="name"></md-icon> -->
-                    <input ng-model="phoneNum" type="text" angular-mask="9999999999"><span class="highlight"></span><span class="bar"></span>
+                    <input ng-model="userDetails.phoneNum" type="text" angular-mask="9999999999"><span class="highlight"></span><span class="bar"></span>
                     <label>Phone Number</label>
                 </div>
                 <div class="group">
@@ -38,17 +38,17 @@
 			        </md-input-container> -->
 			        <md-input-container>
 					  <label>Address</label>
-					  <textarea ng-model="address" rows="5" cols="40"></textarea>
+					  <textarea ng-model="userDetails.address" rows="5" cols="40"></textarea>
 					</md-input-container>
 			    </div>
 			  	<div class="group">
-				  	<select ng-model='country' class='form-control' ng-change="loadStateDetails()">
+				  	<select ng-model='userDetails.country' class='form-control' ng-change="loadStateDetails()">
 			            <option value="default" ng-selected="selected">Select a Country</option>
 			            <option ng-repeat="country in countries" ng-value="country.code">{{country.value}}</option>
 			        </select>
 		        </div>
 		        <div class="group">
-			        <select ng-model='state' class='form-control'>
+			        <select ng-model='userDetails.state' class='form-control'>
 			            <!-- <option value="default" ng-selected="selected">Select a State</option> -->
 			            <option ng-repeat="state in states" ng-value="state">{{state}}</option>
 			        </select>
@@ -69,10 +69,10 @@
                     </div>
                 </md-card-content> -->
                 <div class="row">
-                    <button type="button" ng-click="ack()" class="button buttonBlue loginBtn">Register
+                    <button type="button" ng-click="registerUser(userDetails)" class="button buttonBlue loginBtn">Register
                         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
                     </button>
-                    <button type="button" ng-click="" class="button buttonBlue loginBtn">Reset
+                    <button type="button" ng-click="resetUser(userDetails)" class="button buttonBlue loginBtn">Reset
                         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
                     </button>
                 </div>

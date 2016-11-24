@@ -1,5 +1,5 @@
 eventPlanner.service('restAPIService',['$http',
-function($http){    
+function($http){
 	var restServices = {};
 	var ext_service_groupkt_base_url = 'http://services.groupkt.com/state/get/'
 	restServices.getDetails = function(){
@@ -27,16 +27,9 @@ function($http){
     	return $http({
     		method: "POST",
     		url: "http://localhost:3000/register",
+    		data: userData,
     		headers: {'Content-Type': 'application/json'}
     	});
-    	
-    	$http.post('/register', userDetails)
-		   		.success(function(response){
-		   			console.log(response);
-		   			if(response.isSuccess){
-		   				console.log('User details Successfully registered');
-		   			}
-		   		});
     }
     restServices.getStatesByCountryCode = function(countryCode){
     	return $http({

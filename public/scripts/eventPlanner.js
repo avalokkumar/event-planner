@@ -26,9 +26,10 @@ function loginCtrl($scope,$location, loginService){
 		var res = response.data;
 		console.log("Login Success Response")
 		console.log(res);
+		//.path('/home');
 	}
 	function errorCallback(response){
-		console.log('errorCallback Called')
+		console.log("Login Failed")
 		var errObj = response.data;
 		console.log(errObj.errorMessage);
 	}	
@@ -46,10 +47,31 @@ function registerCtrl($scope, $location, registerService){
 						  {'code':'USA', 'value': 'UNITED STATES OF AMERICA'}];
 	
 	$scope.states = [];
+	$scope.userDetails = {};
 	$scope.loadStateDetails = function(){
 		$scope.states = [];
-		registerService.getStatesByCountryCode($scope.country).then(successCallback, errorCallback);	
+		registerService.getStatesByCountryCode($scope.userDetails.country).then(successCallback, errorCallback);	
 	}
+	
+	$scope.registerUser = function(userDetails){
+		console.log('Sending below user details for registration');
+		console.log(userDetails);
+		registerService.registerUser(userDetails).then(registerSuccessCallback, registerErrorCallback);
+	}
+	
+	$scope.resetUser = function(userDetails){
+		userDetails = {};
+	}
+	
+	function registerSuccessCallback(response){
+		var responseObj = response.data;
+		console.log(responseObj.registerStatusCode);
+		console.log(responseObj.registerStatusMessage);
+	}
+	function registerErrorCallback(response){
+		
+	}
+	
 	function successCallback(response){
 		/*for(var state in response.data.RestResponse.result){
 			$scope.states.push(state.name);

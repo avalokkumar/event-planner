@@ -4,6 +4,7 @@ module.exports = function() {
   var db = mongojs("contactlist", [ "contactlist" ]);
   var functions = {};
   var loginFailedCount = 0;
+  var db = mongojs("eventplanner", [ "eventplanner" ]);
   var isUserRegistered = function(username) {
       console.log("Received a GET request!");
       var username = req.params.username;
@@ -34,39 +35,53 @@ module.exports = function() {
   
   functions.validateCredentials = function(req, res){
 	  console.log('Inside validateCredentials in user.js');
-	  var cred = JSON.parse(req.body);
+	  console.log(req.body)
+	  var cred = req.body;
 	  console.log("cred: ")
 	  console.log(cred)
 	  var username = cred.username;
 	  var pwd = cred.pwd;
 	  console.log("username: "+username+ " | Password"+pwd)
+	  
 	  if(username === "clay" && pwd  === "abc" ){
 		  var loginResponse = {
 				  userId: "123",
 				  username: username,
 				  password: pwd,
 				  failedLogin: loginFailedCount,
-				  loginStatus: 2,
+				  loginStatus: 200,
 				  loginStatusCode:"Success"
 		  }
-		  res.json(loginResponse);  
+		  loginFailedCount = 0;
+		  res.json(loginResponse);
 	  }else{
-		  var errResponse = {
-				  errorMessage: "Login Failed",
-				  errorCode: 5
-		  } 
+		  var errResponse;
 		  loginFailedCount++;
+		  if(loginFailedCount<=3){
+			  errResponse = {
+					  errorMessage: "Login Failed",
+					  errorCode: 5,
+					  failedLogin: loginFailedCount
+			  }
+		  }else{
+			  console.log("Maximum Failed Login Reached");
+			  errResponse = {
+					  errorMessage: "Maximum Failed Login Reached",
+					  errorCode: 5,
+					  failedLogin: loginFailedCount
+			  } 
+		  }
 		  res.json(errResponse);
 	  }
-	  /*if(isUserRegistered(req.param.username)){
-		 //TODO: return success flag in response
-	 }*/
-	  
   }
   
   functions.createUser = function(req, res){
-	  //TODO: Get the user details from req and insert the user in db
-	  // and return the id back to client
+	  console.log("CreateUser method called");
+	  var userInfos = req.body;
+	  console.log(userInfos)
+	  /*db.eventplanner.insert(userInfos, function(err, userInfo){
+		  res.json(userInfo);
+	  })*/
   }
   
   return functions;

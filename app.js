@@ -25,7 +25,7 @@ module.exports = function(){
   /*app.get('/', function(req, res){
 	  res.sendFile('./public/index.html')
   })*/
-  app.get('/register', function(req,res){
+  app.post('/register', function(req,res){
 	  user.createUser(req, res);
   })
   app.post('/login', function(req,res){
