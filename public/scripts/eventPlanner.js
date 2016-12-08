@@ -65,8 +65,8 @@ function registerCtrl($scope, $location, registerService){
 	
 	function registerSuccessCallback(response){
 		var responseObj = response.data;
-		console.log(responseObj.registerStatusCode);
-		console.log(responseObj.registerStatusMessage);
+		console.log(responseObj);
+		//console.log(responseObj.registerStatusMessage);
 	}
 	function registerErrorCallback(response){
 		

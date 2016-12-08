@@ -30,18 +30,14 @@ module.exports = function() {
   }
   
   functions.getUserDetails = function(username){
-	  //Query the db and return the user which matches the given username
+	  //TODO:Query the db and return the user which matches the given username
   }
   
   functions.validateCredentials = function(req, res){
-	  console.log('Inside validateCredentials in user.js');
-	  console.log(req.body)
 	  var cred = req.body;
-	  console.log("cred: ")
 	  console.log(cred)
 	  var username = cred.username;
 	  var pwd = cred.pwd;
-	  console.log("username: "+username+ " | Password"+pwd)
 	  
 	  if(username === "clay" && pwd  === "abc" ){
 		  var loginResponse = {
@@ -63,13 +59,15 @@ module.exports = function() {
 					  errorCode: 5,
 					  failedLogin: loginFailedCount
 			  }
+			  //handleError(res, "Login Failed", 5, loginFailedCount);
 		  }else{
 			  console.log("Maximum Failed Login Reached");
 			  errResponse = {
 					  errorMessage: "Maximum Failed Login Reached",
 					  errorCode: 5,
 					  failedLogin: loginFailedCount
-			  } 
+			  }
+			  //handleError(res, "Maximum Failed Login Reached", 5, loginFailedCount);
 		  }
 		  res.json(errResponse);
 	  }
@@ -79,10 +77,21 @@ module.exports = function() {
 	  console.log("CreateUser method called");
 	  var userInfos = req.body;
 	  console.log(userInfos)
-	  /*db.eventplanner.insert(userInfos, function(err, userInfo){
+	  db.eventplanner.insert(userInfos, function(err, userInfo){
+		  if(err){
+			  handleError(res, err.errorMessage, err.errorCode);
+		  }
 		  res.json(userInfo);
-	  })*/
+	  })
   }
   
+  /*function handleError(res, errMsg, errCode, failedLoginCount){
+	  var errorObj = { 
+			  		errorMessage: this.errMessage,
+			  		errorCode: this.errCode,
+			  		failedLoginCount: this.failedLoginCount
+			  }
+	  res.json(errorObj);
+  }*/
   return functions;
 }
