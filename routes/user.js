@@ -40,6 +40,7 @@ module.exports = function() {
 	  var pwd = cred.pwd;
 	  
 	  if(username === "clay" && pwd  === "abc" ){
+		  loginFailedCount = 0;
 		  var loginResponse = {
 				  userId: "123",
 				  username: username,
@@ -48,7 +49,6 @@ module.exports = function() {
 				  loginStatus: 200,
 				  loginStatusCode:"Success"
 		  }
-		  loginFailedCount = 0;
 		  res.json(loginResponse);
 	  }else{
 		  var errResponse;

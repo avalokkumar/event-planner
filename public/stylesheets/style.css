@@ -2,13 +2,13 @@
 a {
   color: #00B7FF;
 }
-body{
+/* body{
   line-height: 1.42857143;
   padding: 50px;
   color: #888888;
   background-color: #333333 !important;
   padding: 50px;
-}
+} */
 
 body.container{
 	width: inherit !important;
@@ -23,10 +23,6 @@ body.container{
     margin: 0em auto;
     padding: 0em;
 }
-.mainContainer{
-	width: 100%;
-	background-color: #272B30;
-}
 
 .headerImg{
 	padding: 0.5em 1em 1em 1em;
@@ -34,8 +30,8 @@ body.container{
     max-width: 100%;
 }
 
-.right-menu{
-	padding: 2em 1.2em 1.2em 1.2em; 
+.left-menu{
+	padding: 5em 1.2em 1.2em 1.2em; 
 }
 a.list-group-item, button.list-group-item{
 	padding: 1em 0em 1em 0em;
@@ -76,15 +72,15 @@ h1 { color: #636363; }
 
 h3 { color: #4a89dc; }
 
-form {
-    width: 380px;
+/* form {
+    width: 700px;
     margin: 1em auto;
     border-radius: 1em;
     padding: 1em 1em 1em 1em;
     background: #fafafa;
     border: 1px solid #ebebeb;
     box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
-}
+} */
 
 .group {
     position: relative;
@@ -270,7 +266,7 @@ input:focus ~ .highlight {
     border-bottom: none !important;
 }
 .searchBtn{
-
+	margin-left: 60px;
 }
 
 #footer {

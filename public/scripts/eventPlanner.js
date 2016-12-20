@@ -11,10 +11,15 @@ eventPlanner.controller('mainController', ['$scope', function($scope, $location)
 	}
 }]);
 
-eventPlanner.controller('loginCtrl',['$scope','$location','loginService',
+eventPlanner.controller('homeCtrl',['$scope','$location','loginService',
 function loginCtrl($scope,$location, loginService){
 	console.log('Initializing loginCtrl')
 	$scope.hello = "Hello";
+	$scope.menuItems = ["Show Events",
+						  "Show Participants",
+						  "Show Service locations",
+						  "Add Reminder to Event",
+						  "View Reminders"];
 	loginService.getDetails().then(function(response){
 		console.log(response.data);
 	})
@@ -69,7 +74,7 @@ function registerCtrl($scope, $location, registerService){
 		//console.log(responseObj.registerStatusMessage);
 	}
 	function registerErrorCallback(response){
-		
+		console.log(response.errorMessage)
 	}
 	
 	function successCallback(response){
@@ -84,6 +89,3 @@ function registerCtrl($scope, $location, registerService){
 		console.log(response.errorMessage);
 	}
 }]);
-
-
-

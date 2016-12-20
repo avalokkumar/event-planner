@@ -1,22 +1,20 @@
 eventPlanner.config(['$urlRouterProvider','$stateProvider',
              function($urlRouterProvider, $stateProvider) {
-         		$urlRouterProvider.otherwise('login');
+         		$urlRouterProvider.otherwise('home');
          		$stateProvider
          			.state('home', {
          				url:'/home',
-         				controller: function($scope){
-         					console.log('Inside homeController')
-         				},
-         				templateUrl: '../views/home.html'
+         				templateUrl: '../views/home1.html',
+         				controller: 'homeCtrl'
          			})
-         			.state('login', {
-         				url:'/login',
-         				templateUrl: '../views/login.html',
-         				controller: 'loginCtrl'
-         			}).
-         			state('register', {
+         			.state('register', {
          				url: '/register',
-         				templateUrl: '../views/register.html',
+         				templateUrl: '../views/register3.html',
          				controller: 'registerCtrl'
          			})
+         			.state('event', {
+         				url: '/createEvent',
+         				templateUrl: '../views/createEvent.html',
+         				controller: 'eventCtrl'
+         			});
 }]);
