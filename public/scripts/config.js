@@ -4,12 +4,12 @@ eventPlanner.config(['$urlRouterProvider','$stateProvider',
          		$stateProvider
          			.state('home', {
          				url:'/home',
-         				templateUrl: '../views/home1.html',
+         				templateUrl: '../views/home.html',
          				controller: 'homeCtrl'
          			})
          			.state('register', {
          				url: '/register',
-         				templateUrl: '../views/register3.html',
+         				templateUrl: '../views/register1.html',
          				controller: 'registerCtrl'
          			})
          			.state('event', {

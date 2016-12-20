@@ -19,7 +19,7 @@
 <body>
 <div class="container-fluid">
 	<h3><center>{{title}}</center></h3>
-		<div class="" ng-controller="homeCtrl">
+		<div ng-controller="homeCtrl">
 		 <div class="row">
 		        <nav class="navbar navbar-default navbar-fixed-top">
 		            <div class="container-fluid">
@@ -92,7 +92,7 @@
 																</div>
 																<div class="checkbox">
 																	 <label>
-																	 	<input type="checkbox">keep me logged-in<
+																	 	<input type="checkbox">keep me logged-in
 																	 </label>
 																</div>
 														 </form>
@@ -144,12 +144,9 @@
 					</div>
 				</div>
 				<div class="col-md-9 mainContainer">
-						<div class="jumbotron">
-						  <h3>Jumbotron</h3>
-						  <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+						  <h3>Home Section</h3>
 						  <div ui-view></div>
-						</div>
-					</div>
+				</div>
 			</div>
 		</div>
 </div>

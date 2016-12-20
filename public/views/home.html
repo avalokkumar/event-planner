@@ -1,4 +1,4 @@
-<div class="mainContainer" ng-controller="homeCtrl">
+<!-- <div class="" ng-controller="homeCtrl">
     <div class="row">
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
@@ -30,33 +30,88 @@
 						    </ul>
 						  </li>
                     </ul>
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input type="text" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-default searchBtn">Submit</button>
+                    
+                    <form class="navbar-form navbar-left">
+                    	<div class="row">
+	                    	<div class="form-group">
+	                            <input type="text" placeholder="Search">
+	                        </div>
+	                        <button type="submit" class="btn btn-default submitBtn">Submit</button>
+                    	</div>
                     </form>
                     <ul class="nav navbar-right">
                         <li><a ng-href="/#"><div class="btn btn-primary"><b>Login</b></div></a></li>
                     </ul>
+                    <ul class="nav navbar-nav navbar-right">
+				        <li><p class="navbar-text">Already have an account?</p></li>
+				        <li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+							<ul id="login-dp" class="dropdown-menu">
+								<li>
+									 <div class="row">
+											<div class="col-md-12">
+												Login via {{hello}}
+												<div class="social-buttons">
+													<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+													<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+												</div>
+				                                or
+												 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+														<div class="form-group">
+															 <label class="sr-only" for="exampleInputEmail2">Email address</label>
+															 <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+														</div>
+														<div class="form-group">
+															 <label class="sr-only" for="exampleInputPassword2">Password</label>
+															 <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+				                                             <div class="help-block text-right"><a href="">Forget the password ?</a></div>
+														</div>
+														<div class="form-group">
+															 <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+														</div>
+														<div class="checkbox">
+															 <label>
+															 	<input type="checkbox">keep me logged-in<
+															 </label>
+														</div>
+												 </form>
+											</div>
+											<div class="bottom text-center">
+												New here ? <a href="#"><b>Join Us</b></a>
+											</div>
+									 </div>
+								</li>
+							</ul>
+				        </li>
+				      </ul>
                 </div>
             </div>
         </nav>
     </div>
-    <div class="row col-md-8">
-	    <div class="row">
-		    <!-- <h1>{{"Event" + " Planner"}}</h1> -->
-		    <div class="headerImg">
-		    	<img class="img-responsive" src="images/header.jpg">
-		    </div>
-	    </div>
-    	<div class="row">
-    		<div class="col-md-4">
-	    		<div class="panel panel-default">
-				  <div class="panel-heading">Event News 1</div>
-				  <img src="images/event1.jpg" class="img-thumbnail" alt="france country side">
-				  <div class="panel-body">
-				    <b>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+    <div class="row">
+	    <div class="col-md-3 left-menu">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title text-center">Services</h3>
+			  </div>
+			  <div class="panel-body">
+			  	<div class="list-group">
+				  <a href="#" class="list-group-item" ng-repeat="menuItem in menuItems">{{menuItem}}</a>
+				  <a href="#" class="list-group-item">Show Events</a>
+				  <a href="#" class="list-group-item">Show Participants</a>
+				  <a href="#" class="list-group-item">Show Service locations</a>
+				  <a href="#" class="list-group-item">Add Reminder to Event</a>
+				  <a href="#" class="list-group-item">View Reminders</a>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Secondary Right Menu</h3>
+			  </div>
+			  <div class="panel-body">
+			    <b>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
 		    			Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
 		    			when an unknown printer took a galley of type and scrambled it to make a type 
 		    			specimen book. It has survived not only five centuries, but also the leap into 
@@ -64,72 +119,14 @@
 		    			the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
 		    			and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 		    			</b>
-				  </div>
-				</div>
-    		</div>
-    		<div class="col-md-4">
-	    		<div class="panel panel-default">
-				  <div class="panel-heading">Event News 2</div>
-				  <img src="images/event2.jpg" class="img-thumbnail" alt="france country side">
-				  <div class="panel-body">
-				    <b>It is a long established fact that a reader will be distracted by the readable 
-		    			content of a page when looking at its layout. The point of using Lorem Ipsum is that 
-		    			it has a more-or-less normal distribution of letters, as opposed to using 'Content here, 
-		    			content here', making it look like readable English. Many desktop publishing packages and 
-		    			web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' 
-		    			will uncover many web sites still in their infancy. Various versions have evolved over the years, 
-		    			sometimes by accident, sometimes on purpose (injected humour and the like).
-		    			</b>
-				  </div>
-				</div>
-    		</div>
-    		<div class="col-md-4">
-	    		<div class="panel panel-default">
-				  <div class="panel-heading">Event News 2</div>
-				  <img src="images/event3.jpg" class="img-thumbnail" alt="france country side">
-				  <div class="panel-body">
-				    <b>There are many variations of passages of Lorem Ipsum available, but the majority have suffered 
-		    			alteration in some form, by injected humour, or randomised words which don't look even slightly believable. 
-		    			If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden 
-		    			in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, 
-		    			making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, to generate Lorem Ipsum which looks reasonable.
-		    			</b>
-				  </div>
-				</div>
-    		</div>
-    	</div>
-	</div>
-	<div class="col-md-4 right-menu">
-		<div class="panel panel-primary">
-		  <div class="panel-heading">
-		    <h3 class="panel-title">Primary Right Menu</h3>
-		  </div>
-		  <div class="panel-body">
-		  	<div class="list-group">
-			  <a href="#" class="list-group-item">Menu 1</a>
-			  <a href="#" class="list-group-item">Menu 2</a>
-			  <a href="#" class="list-group-item">Menu 3</a>
-			  <a href="#" class="list-group-item">Menu 4</a>
-			  <a href="#" class="list-group-item">Menu 5</a>
-			  <a href="#" class="list-group-item">Menu 6</a>
+			  </div>
 			</div>
-		  </div>
 		</div>
-		
-		<div class="panel panel-danger">
-		  <div class="panel-heading">
-		    <h3 class="panel-title">Secondary Right Menu</h3>
-		  </div>
-		  <div class="panel-body">
-		    <b>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-	    			Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-	    			when an unknown printer took a galley of type and scrambled it to make a type 
-	    			specimen book. It has survived not only five centuries, but also the leap into 
-	    			electronic typesetting, remaining essentially unchanged. It was popularised in 
-	    			the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-	    			and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-	    			</b>
-		  </div>
-		</div>
+		<div class="col-md-9 mainContainer">
+				<div class="jumbotron">
+				  <h3>Jumbotron</h3>
+				  <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+				</div>
+			</div>
 	</div>
-</div>
+</div> -->

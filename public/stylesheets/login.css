@@ -12,6 +12,7 @@ body {
 
 .mainContainer{
 	margin-top: 5em;
+	background-color: #9f9f9f;
 }
 
 hgroup { 
@@ -26,10 +27,10 @@ h1 { color: #636363; }
 h3 { color: #4a89dc; }
 
 form {
-	width: 380px;
+	width: 800px;
 	/* margin: 4em auto; */
-	padding: 3em 2em 2em 2em;
-	background: #fafafa;
+	padding: 0em 2em 2em 2em;
+	background: #dedede;
 	border: 1px solid #ebebeb;
 	/* box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px; */
 }
