@@ -39,7 +39,7 @@ module.exports = function() {
 	  var username = cred.username;
 	  var pwd = cred.pwd;
 	  
-	  if(username === "clay" && pwd  === "abc" ){
+	  if(username === "clay@ab" && pwd  === "abc" ){
 		  loginFailedCount = 0;
 		  var loginResponse = {
 				  userId: "123",

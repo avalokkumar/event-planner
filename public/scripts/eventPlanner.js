@@ -58,10 +58,17 @@ function registerCtrl($scope, $location, registerService){
 		registerService.getStatesByCountryCode($scope.userDetails.country).then(successCallback, errorCallback);	
 	}
 	
-	$scope.registerUser = function(userDetails){
+	$scope.registerUser = function(){
 		console.log('Sending below user details for registration');
-		console.log(userDetails);
-		registerService.registerUser(userDetails).then(registerSuccessCallback, registerErrorCallback);
+		var user = $scope.userDetails;
+		console.log(user)
+		console.log($scope.userDetails)
+		if(user.pwd === user.pwdConfirm){
+			registerService.registerUser(user).then(registerSuccessCallback, registerErrorCallback);	
+		}else{
+			alert("Please confirm your password correctly!!");
+			return false;
+		}
 	}
 	
 	$scope.resetUser = function(userDetails){
